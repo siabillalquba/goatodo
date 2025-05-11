@@ -16,7 +16,7 @@ const tasks = [
 export function App() {
   return (
     <div>
-      <h1>goatodo</h1>
+      <h1>🐐 GOATODO</h1>
 
       <ul>
         {tasks.map((task) => {
