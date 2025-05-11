@@ -1,3 +1,3 @@
-# GOATODO!!!
+# 🐐 GOATODO
 
 Task management application.
