@@ -1,1 +1,3 @@
-// For Button Component
+export function Button() {
+  return <button>Click me</button>;
+}

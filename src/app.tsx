@@ -1,3 +1,5 @@
+import { Button } from "./components/button";
+
 const tasks = [
   {
     id: 1,
@@ -17,6 +19,10 @@ export function App() {
   return (
     <div>
       <h1>🐐 GOATODO</h1>
+
+      <Button />
+      <Button />
+      <Button />
 
       <ul>
         {tasks.map((task) => {
