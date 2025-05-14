@@ -20,10 +20,6 @@ export function App() {
     <div>
       <h1>🐐 GOATODO</h1>
 
-      <Button />
-      <Button />
-      <Button />
-
       <ul>
         {tasks.map((task) => {
           return (
@@ -31,6 +27,7 @@ export function App() {
               <h2>{task.title}</h2>
               <p>{task.completed ? "Completed" : "Incomplete"}</p>
               <p>Date Time: {task.date.toLocaleString()}</p>
+              <Button>Delete</Button>
             </li>
           );
         })}
