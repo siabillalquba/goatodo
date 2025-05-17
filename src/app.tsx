@@ -17,10 +17,10 @@ const tasks = [
 
 export function App() {
   return (
-    <div>
-      <h1>🐐 GOATODO</h1>
+    <div className="p-4">
+      <h1 className="p-8 text-3xl">🐐 GOATODO</h1>
 
-      <ul>
+      <ul className="space-y-8">
         {tasks.map((task) => {
           return (
             <li key={task.id}>
