@@ -61,8 +61,12 @@ export function App() {
   return (
     <div className="flex justify-center">
       <div className="p-4">
-        <h1 className="text-3xl font-bold underline">🐐 GOATODO</h1>
-        <p className="p-2">To Do List for GOAT</p>
+        <header>
+          <h1 className="text-3xl font-bold underline flex justify-center">
+            🐐 GOATODO
+          </h1>
+          <p className="p-2 flex justify-center">To Do List for GOAT</p>
+        </header>
 
         <ul className="space-y-8">
           {tasks.map((task) => {
