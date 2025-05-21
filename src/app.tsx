@@ -59,7 +59,7 @@ const tasks = [
 
 export function App() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-amber-800">
       <div className="p-4">
         <header>
           <h1 className="text-3xl font-bold underline flex justify-center">
@@ -71,8 +71,8 @@ export function App() {
         <ul className="space-y-8">
           {tasks.map((task) => {
             return (
-              <li key={task.id}>
-                <h2>{task.title}</h2>
+              <li key={task.id} className="border p-4 rounded-lg bg-amber-50">
+                <h2 className="font-bold">{task.title}</h2>
                 <p>{task.completed ? "Completed" : "Incomplete"}</p>
                 <p>Date Time: {task.date.toLocaleString()}</p>
                 <Button>Delete</Button>
