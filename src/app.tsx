@@ -59,21 +59,24 @@ const tasks = [
 
 export function App() {
   return (
-    <div className="p-4">
-      <h1 className="p-8 text-3xl">🐐 GOATODO</h1>
+    <div className="flex justify-center">
+      <div className="p-4">
+        <h1 className="text-3xl font-bold underline">🐐 GOATODO</h1>
+        <p className="p-2">To Do List for GOAT</p>
 
-      <ul className="space-y-8">
-        {tasks.map((task) => {
-          return (
-            <li key={task.id}>
-              <h2>{task.title}</h2>
-              <p>{task.completed ? "Completed" : "Incomplete"}</p>
-              <p>Date Time: {task.date.toLocaleString()}</p>
-              <Button>Delete</Button>
-            </li>
-          );
-        })}
-      </ul>
+        <ul className="space-y-8">
+          {tasks.map((task) => {
+            return (
+              <li key={task.id}>
+                <h2>{task.title}</h2>
+                <p>{task.completed ? "Completed" : "Incomplete"}</p>
+                <p>Date Time: {task.date.toLocaleString()}</p>
+                <Button>Delete</Button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
