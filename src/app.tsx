@@ -1,4 +1,5 @@
 import { Button } from "./components/button";
+import { ButtonCounter } from "./components/button-counter";
 
 const tasks = [
   {
@@ -60,18 +61,20 @@ const tasks = [
 export function App() {
   return (
     <div className="flex justify-center bg-amber-800">
-      <div className="p-4">
+      <div className="space-y-10 p-4">
         <header>
-          <h1 className="text-3xl font-bold underline flex justify-center">
+          <h1 className="flex justify-center text-3xl font-bold underline">
             🐐 GOATODO
           </h1>
-          <p className="p-2 flex justify-center">To Do List for GOAT</p>
+          <p className="flex justify-center p-2">To Do List for GOAT</p>
+
+          <ButtonCounter />
         </header>
 
         <ul className="space-y-8">
           {tasks.map((task) => {
             return (
-              <li key={task.id} className="border p-4 rounded-lg bg-amber-50">
+              <li key={task.id} className="rounded-lg border-2 bg-amber-50 p-4">
                 <h2 className="font-bold">{task.title}</h2>
                 <p>{task.completed ? "Completed" : "Incomplete"}</p>
                 <p>Date Time: {task.date.toLocaleString()}</p>
