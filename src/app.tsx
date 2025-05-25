@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ButtonSmall } from "./components/button";
+import { Button, ButtonSmall } from "./components/button";
 import { ButtonCounter } from "./components/button-counter";
 
 const initialTasks = [
@@ -67,6 +67,17 @@ export function App() {
     setTasks(updatedTasks);
   }
 
+  function addTask() {
+    const newTask = {
+      id: tasks[tasks.length - 1].id + 1,
+      title: "New Task",
+      completed: false,
+      date: new Date(),
+    };
+    const updatedTasks = [...tasks, newTask];
+    setTasks(updatedTasks);
+  }
+
   return (
     <div className="flex justify-center bg-amber-800">
       <div className="space-y-10 p-4">
@@ -77,6 +88,7 @@ export function App() {
           <p className="flex justify-center p-2">To Do List for GOAT</p>
 
           <ButtonCounter />
+          <Button onClick={addTask}>Add new Task</Button>
         </header>
 
         <ul className="space-y-8">
