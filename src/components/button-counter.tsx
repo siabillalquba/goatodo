@@ -16,7 +16,7 @@ export function ButtonCounter() {
       <h4 className="text-xl">{count}</h4>
       <Button onClick={handleIncrement}>Increment</Button>
 
-      <Button onClick={handleDecrement}>Increment</Button>
+      <Button onClick={handleDecrement}>Decrement</Button>
     </div>
   );
 }
