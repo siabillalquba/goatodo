@@ -1,4 +1,4 @@
-//import { Button } from "./button";
+import { Button } from "./button";
 
 import { useState } from "react";
 
@@ -8,15 +8,15 @@ export function ButtonCounter() {
   function handleIncrement() {
     setCount(count + 1);
   }
+  function handleDecrement() {
+    setCount(count - 1);
+  }
   return (
     <div>
       <h4 className="text-xl">{count}</h4>
-      <button
-        onClick={handleIncrement}
-        className="rounded-lg bg-amber-950 px-2 py-1 text-xs font-bold text-stone-50"
-      >
-        Increment
-      </button>
+      <Button onClick={handleIncrement}>Increment</Button>
+
+      <Button onClick={handleDecrement}>Increment</Button>
     </div>
   );
 }
