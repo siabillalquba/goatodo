@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, ButtonSmall } from "./components/button";
+import { ButtonSmall } from "./components/button";
 
 const initialTasks = [
   {
@@ -69,9 +69,15 @@ export function App() {
   function addTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
+    const formData = new FormData(event.currentTarget);
+
+    const title = String(formData.get("title"));
+
+    //  if (!title) return null;
+
     const newTask = {
       id: tasks[tasks.length - 1].id + 1,
-      title: "New Task",
+      title: title,
       completed: false,
       date: new Date(),
     };
@@ -101,8 +107,6 @@ export function App() {
               Add Task
             </button>
           </form>
-
-          <Button onClick={addTask}>Add new Task</Button>
         </header>
 
         <ul className="space-y-8">
