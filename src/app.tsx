@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button, ButtonSmall } from "./components/button";
-import { ButtonCounter } from "./components/button-counter";
 
 const initialTasks = [
   {
@@ -79,7 +78,7 @@ export function App() {
   }
 
   return (
-    <div className="flex justify-center bg-amber-800">
+    <div className="flex justify-center">
       <div className="space-y-10 p-4">
         <header>
           <h1 className="flex justify-center text-3xl font-bold underline">
@@ -87,7 +86,6 @@ export function App() {
           </h1>
           <p className="flex justify-center p-2">To Do List for GOAT</p>
 
-          <ButtonCounter />
           <Button onClick={addTask}>Add new Task</Button>
         </header>
 
