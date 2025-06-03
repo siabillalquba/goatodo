@@ -66,7 +66,9 @@ export function App() {
     setTasks(updatedTasks);
   }
 
-  function addTask() {
+  function addTask(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
     const newTask = {
       id: tasks[tasks.length - 1].id + 1,
       title: "New Task",
@@ -85,6 +87,20 @@ export function App() {
             🐐 GOATODO
           </h1>
           <p className="flex justify-center p-2">To Do List for GOAT</p>
+
+          <form onSubmit={addTask} method="post">
+            <label htmlFor="title">Task Title</label>
+            <input
+              id="title"
+              type="text"
+              name="title"
+              placeholder="Task title"
+              className="border p-2"
+            />
+            <button type="submit" className="bg-green-600 p-2">
+              Add Task
+            </button>
+          </form>
 
           <Button onClick={addTask}>Add new Task</Button>
         </header>
