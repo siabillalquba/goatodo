@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "./components/button";
 import { ButtonSmall } from "./components/button";
 
 const initialTasks = [
@@ -103,9 +104,7 @@ export function App() {
               placeholder="Task title"
               className="border p-2"
             />
-            <button type="submit" className="bg-green-600 p-2">
-              Add Task
-            </button>
+            <Button type="submit">Add Task</Button>
           </form>
         </header>
 
