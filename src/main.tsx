@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Link } from "react-router";
 
 import "./index.css";
 import { HomeRoute } from "./routes/home";
@@ -7,6 +7,17 @@ import { AboutRoute } from "./routes/about";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
+    <nav className="bg-white p-4 text-sm">
+      <ul className="flex gap-4">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
+    </nav>
+
     <Routes>
       <Route path="/" element={<HomeRoute />} />
       <Route path="/about" element={<AboutRoute />} />
