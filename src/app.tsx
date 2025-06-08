@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button } from "./components/button";
-import { ButtonSmall } from "./components/button";
+import type { Task } from "./modules/task/type";
+import { TaskCard } from "./components/task-card";
 
-const initialTasks = [
+const initialTasks: Task[] = [
   {
     id: 1,
     title: "Breakfast",
@@ -111,13 +112,8 @@ export function App() {
         <ul className="space-y-8">
           {tasks.map((task) => {
             return (
-              <li key={task.id} className="rounded-lg border-2 bg-amber-50 p-4">
-                <h2 className="font-bold">{task.title}</h2>
-                <p>{task.completed ? "Completed" : "Incomplete"}</p>
-                <p>Date Time: {task.date.toLocaleString()}</p>
-                <ButtonSmall onClick={() => removeTask(task.id)}>
-                  Delete
-                </ButtonSmall>
+              <li key={task.id}>
+                <TaskCard task={task} removeTask={removeTask} />
               </li>
             );
           })}
