@@ -7,7 +7,7 @@ export function TaskCard({
   removeTask,
 }: {
   task: Task;
-  removeTask: (id: number) => void;
+  removeTask?: (id: number) => void;
 }) {
   return (
     <div key={task.id} className="rounded-lg border-2 bg-amber-50 p-4">
@@ -17,7 +17,10 @@ export function TaskCard({
 
       <p>{task.completed ? "Completed" : "Incomplete"}</p>
       <p>Date Time: {task.date.toLocaleString()}</p>
-      <ButtonSmall onClick={() => removeTask(task.id)}>Delete</ButtonSmall>
+
+      {removeTask && (
+        <ButtonSmall onClick={() => removeTask(task.id)}>Delete</ButtonSmall>
+      )}
     </div>
   );
 }
