@@ -40,7 +40,11 @@ export function HomeRoute() {
           </h1>
           <p className="flex justify-center p-2">To Do List for GOAT</p>
 
-          <form onSubmit={addTask} method="post">
+          <form
+            onSubmit={addTask}
+            method="post"
+            className="flex max-w-xs flex-col justify-center gap-2 rounded-lg border-2 bg-amber-50 p-4"
+          >
             <label htmlFor="title">Task Title</label>
             <input
               id="title"
