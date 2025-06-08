@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeRoute />} />
         <Route path="/about" element={<AboutRoute />} />
-        <Route path="/tasks/:taskID" element={<TaskDetailsRoute />} />
+        <Route path="/tasks/:taskId" element={<TaskDetailsRoute />} />
       </Routes>
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@ import { TaskCard } from "../components/task-card";
 
 export function TaskDetailsRoute() {
   const params = useParams();
-  const taskId = Number(params.taskID);
+  const taskId = Number(params.taskId);
 
   const [tasks] = useLocalStorage("tasks", initialTasks);
 
