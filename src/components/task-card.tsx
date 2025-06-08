@@ -11,6 +11,12 @@ export function TaskCard({
 }) {
   return (
     <div key={task.id} className="rounded-lg border-2 bg-amber-50 p-4">
+      <input
+        id="task.completed"
+        name="task.completed"
+        type="checkbox"
+        value="Completed"
+      />
       <Link to={`/tasks/${task.id}`}>
         <h2 className="text-xl font-bold">{task.title}</h2>
       </Link>
