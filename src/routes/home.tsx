@@ -29,6 +29,8 @@ export function HomeRoute() {
     };
     const updatedTasks = [...tasks, newTask];
     setTasks(updatedTasks);
+
+    event.currentTarget.reset();
   }
 
   return (
