@@ -12,6 +12,14 @@ export function HomeRoute() {
     setTasks(updatedTasks);
   }
 
+  function completeTask(id: number) {
+    const updatedTasks = tasks.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task,
+    );
+
+    setTasks(updatedTasks);
+  }
+
   function addTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -63,7 +71,11 @@ export function HomeRoute() {
           {tasks.map((task) => {
             return (
               <li key={task.id}>
-                <TaskCard task={task} removeTask={removeTask} />
+                <TaskCard
+                  task={task}
+                  removeTask={removeTask}
+                  completeTask={completeTask}
+                />
               </li>
             );
           })}
