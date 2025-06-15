@@ -13,7 +13,7 @@ export function TaskCard({
   completeTask?: (id: number) => void;
 }) {
   return (
-    <div key={task.id} className="rounded-lg border-2 bg-amber-50 p-4">
+    <div key={task.id} className="max-w-sm rounded-lg border-2 bg-amber-50 p-4">
       <div className="flex gap-2 align-middle">
         {completeTask && (
           <Checkbox

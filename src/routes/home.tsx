@@ -27,10 +27,8 @@ export function HomeRoute() {
 
     const title = String(formData.get("title"));
 
-    //  if (!title) return null;
-
     const newTask = {
-      id: tasks[tasks.length - 1].id + 1,
+      id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
       title: title,
       completed: false,
       date: new Date(),
@@ -43,17 +41,15 @@ export function HomeRoute() {
 
   return (
     <div className="flex justify-center">
-      <div className="space-y-10 p-4">
+      <div className="w-full max-w-sm space-y-10 p-4">
         <header>
-          <h1 className="flex justify-center text-3xl font-bold underline">
-            🐐 GOATODO
-          </h1>
+          <h1 className="flex justify-center text-3xl font-bold">🐐 GOATODO</h1>
           <p className="flex justify-center p-2">To Do List for GOAT</p>
 
           <form
             onSubmit={addTask}
             method="post"
-            className="flex max-w-xs flex-col justify-center gap-2 rounded-lg border-2 bg-amber-50 p-4"
+            className="flex flex-col justify-center gap-2 rounded-lg border-2 bg-amber-50 p-4"
           >
             <label htmlFor="title">Task Title</label>
             <input
