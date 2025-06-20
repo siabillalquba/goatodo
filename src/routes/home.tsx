@@ -51,7 +51,7 @@ export function HomeRoute() {
             method="post"
             className="flex flex-col justify-center gap-2 rounded-lg border-2 bg-amber-50 p-4"
           >
-            <div>
+            <div className="flex items-center space-x-3">
               <label htmlFor="title">Task Title:</label>
               <input
                 id="title"
@@ -61,7 +61,7 @@ export function HomeRoute() {
                 className="border p-2"
               />
             </div>
-            <div>
+            <div className="flex items-center space-x-3">
               <label htmlFor="date">Due Date:</label>
               <input
                 id="date"
