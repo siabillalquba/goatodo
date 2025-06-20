@@ -25,13 +25,13 @@ export function HomeRoute() {
 
     const formData = new FormData(event.currentTarget);
 
-    const title = String(formData.get("title"));
+    // const title = String(formData.get("title"));
 
     const newTask = {
       id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
-      title: title,
+      title: String(formData.get("title")),
       completed: false,
-      date: new Date(),
+      date: new Date(String(formData.get("date"))),
     };
     const updatedTasks = [...tasks, newTask];
     setTasks(updatedTasks);
@@ -51,14 +51,27 @@ export function HomeRoute() {
             method="post"
             className="flex flex-col justify-center gap-2 rounded-lg border-2 bg-amber-50 p-4"
           >
-            <label htmlFor="title">Task Title</label>
-            <input
-              id="title"
-              type="text"
-              name="title"
-              placeholder="Task title"
-              className="border p-2"
-            />
+            <div>
+              <label htmlFor="title">Task Title:</label>
+              <input
+                id="title"
+                type="text"
+                name="title"
+                placeholder="Task title"
+                className="border p-2"
+              />
+            </div>
+            <div>
+              <label htmlFor="date">Due Date:</label>
+              <input
+                id="date"
+                name="date"
+                type="date"
+                required
+                defaultValue={new Date().toISOString().split("T")[0]}
+              />
+            </div>
+
             <Button type="submit">Add Task</Button>
           </form>
         </header>
